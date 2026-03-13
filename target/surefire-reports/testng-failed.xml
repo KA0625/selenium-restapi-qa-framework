@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="naco.testresource.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Testie(failed)" verbose="0">
+    <classes>
+      <class name="naco.testcases.TC1_ValidateCountyNos">
+        <methods>
+          <include name="StateCountyValidate" invocation-numbers="11"/>
+          <include name="teardown"/>
+          <include name="ILcountValidate"/>
+          <include name="launchapplication"/>
+        </methods>
+      </class> <!-- naco.testcases.TC1_ValidateCountyNos -->
+    </classes>
+  </test> <!-- Testie(failed) -->
+</suite> <!-- Failed suite [Suite] -->
