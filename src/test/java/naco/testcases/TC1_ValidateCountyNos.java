@@ -15,7 +15,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import naco.pageobject.Page2CountyExpolorerPage;
-import naco.testresource.BaseTest;
+import naco.reusablecomponent.BaseTest;
+
 import naco.reusablecomponent.*;
 public class TC1_ValidateCountyNos extends BaseTest{
 
@@ -44,7 +45,6 @@ public class TC1_ValidateCountyNos extends BaseTest{
 	
 		
 		p2.selectstate(input.get("state"));
-	//	p2.countysize(input.get("state"),input.get("statename"));
 		
 		int Count = p2.countysize(input.get("state"), input.get("statename"));
 
@@ -103,8 +103,6 @@ public class TC1_ValidateCountyNos extends BaseTest{
 		System.out.println("rowscounts1"+rowsCountS1);
 		XSSFRow row1=sheet1.getRow(0);
 		int columnCountS1=2;
-		
-		//int columnCountS1=row1.getLastCellNum();
 		Object[][] data = new Object[rowsCountS1-1][columnCountS1];
 		
 		for(int i=0;i<rowsCountS1-1;i++) {

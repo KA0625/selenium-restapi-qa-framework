@@ -36,11 +36,17 @@ public class Page1WelcomePage extends AbstractComponents{
 	public void url() throws IOException {
 		// TODO Auto-generated method stub
 		Properties	 prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\athir\\eclipse-workspace\\AthiraiExecution.NACO\\global.properties");	
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\global.properties");	
 				
 		prop.load(fis);
-		String naco= prop.getProperty("baseUrl");
-		driver.get(naco);
+		 // Jenkins override OR fallback to global.properties
+	    String baseUrl = System.getProperty("baseUrl") != null
+	            ? System.getProperty("baseUrl")
+	            : prop.getProperty("baseUrl");
+
+	    driver.get(baseUrl);
+	 
+
 		
 		
 	}

@@ -1,0 +1,2289 @@
+<html>
+<head>
+<title>TestNG:  Northeast_MidAtlantic</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Northeast_MidAtlantic</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>113/33/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu May 07 14:43:17 CDT 2026</td>
+</tr>
+<tr><td>Total time:</td><td>876 seconds (876218 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Lewis County, NY, 36049</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.lewiscountyny.org expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1871926803", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1871926803'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.lewiscountyny.org expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Ulster County, NY, 36111</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.ulster.ny.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace142658948", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace142658948'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.ulster.ny.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>42</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Mercer County, PA, 42085</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.mcc.co.mercer.pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1559203243", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1559203243'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.mcc.co.mercer.pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>42</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Greene County, PA, 42059</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status -1 for http://www.co.greene.pa.us expected [200] but found [-1]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace685771173", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace685771173'><pre>java.lang.AssertionError: HTTP Status -1 for http://www.co.greene.pa.us expected [200] but found [-1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>26</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Snyder County, PA, 42109</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 406 for http://www.snydercounty.org expected [200] but found [406]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1926306580", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1926306580'><pre>java.lang.AssertionError: HTTP Status 406 for http://www.snydercounty.org expected [200] but found [406]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Allegheny County, PA, 42003</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.county.allegheny.pa.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace765159517", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace765159517'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.county.allegheny.pa.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>63</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Sullivan County, PA, 42113</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.sullivancounty-pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1837781261", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1837781261'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.sullivancounty-pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Venango County, PA, 42121</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.venango.pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2094175962", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2094175962'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.venango.pa.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Northampton County, PA, 42095</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status -1 for https://www.northamptoncounty.org/ expected [200] but found [-1]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace976908075", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace976908075'><pre>java.lang.AssertionError: HTTP Status -1 for https://www.northamptoncounty.org/ expected [200] but found [-1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Albany County, NY, 36001</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.albanycounty.com/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1616707854", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1616707854'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.albanycounty.com/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Essex County, NJ, 34013</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status -1 for http://www.essex-countynj.org expected [200] but found [-1]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace123238861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace123238861'><pre>java.lang.AssertionError: HTTP Status -1 for http://www.essex-countynj.org expected [200] but found [-1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>4</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Cape May County, NJ, 34009</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.cape-may.nj.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace573165182", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace573165182'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.cape-may.nj.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>42</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Adams County, PA, 42001</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.adamscounty.us expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1557259078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1557259078'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.adamscounty.us expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Rockland County, NY, 36087</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.rockland.ny.us expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace48996791", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace48996791'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.rockland.ny.us expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>4</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Genesee County, NY, 36037</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.genesee.ny.us/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1471592488", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1471592488'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.genesee.ny.us/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Elk County, PA, 42047</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 406 for http://www.co.elk.pa.us/ expected [200] but found [406]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1768932912", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1768932912'><pre>java.lang.AssertionError: HTTP Status 406 for http://www.co.elk.pa.us/ expected [200] but found [406]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Warren County, NJ, 34041</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.warren.nj.us/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace909682712", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace909682712'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.warren.nj.us/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Delaware County, PA, 42045</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.delaware.pa.us expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1868597376", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1868597376'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.delaware.pa.us expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Clinton County, PA, 42035</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.clintoncountypa.com/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace41205078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace41205078'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.clintoncountypa.com/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Passaic County, NJ, 34031</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.passaiccountynj.org/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace457323886", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace457323886'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.passaiccountynj.org/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>4</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Steuben County, NY, 36101</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for https://www.steubencony.org/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1500446400", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1500446400'><pre>java.lang.AssertionError: HTTP Status 403 for https://www.steubencony.org/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Morris County, NJ, 34027</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.co.morris.nj.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace856653088", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace856653088'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.co.morris.nj.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>42</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Washington County, PA, 42125</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 401 for http://www.co.washington.pa.us expected [200] but found [401]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1518509805", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1518509805'><pre>java.lang.AssertionError: HTTP Status 401 for http://www.co.washington.pa.us expected [200] but found [401]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Tompkins County, NY, 36109</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://tompkinscountyny.gov/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace906038003", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace906038003'><pre>java.lang.AssertionError: HTTP Status 403 for http://tompkinscountyny.gov/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Cayuga County, NY, 36011</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.cayuga.ny.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace838568008", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace838568008'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=http://www.co.cayuga.ny.us}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Suffolk County, NY, 36103</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.suffolkcountyny.gov/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1883078542", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1883078542'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.suffolkcountyny.gov/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Union County, PA, 42119</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.unionco.org/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1458874887", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1458874887'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.unionco.org/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Bergen County, NJ, 34003</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status -1 for http://www.co.bergen.nj.us expected [200] but found [-1]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1045927584", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1045927584'><pre>java.lang.AssertionError: HTTP Status -1 for http://www.co.bergen.nj.us expected [200] but found [-1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>22</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Middlesex County, NJ, 34023</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.middlesex.nj.us expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace455024356", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace455024356'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.co.middlesex.nj.us expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>4</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Somerset County, NJ, 34035</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for https://www.co.somerset.nj.us/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace782048102", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace782048102'><pre>java.lang.AssertionError: HTTP Status 403 for https://www.co.somerset.nj.us/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Mercer County, NJ, 34021</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.mercercounty.org/ expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1276935458", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1276935458'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.mercercounty.org/ expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Atlantic County, NJ, 34001</td>
+<td><div><pre>java.lang.AssertionError: HTTP Status 403 for http://www.aclink.org expected [200] but found [403]
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1593447492", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1593447492'><pre>java.lang.AssertionError: HTTP Status 403 for http://www.aclink.org expected [200] but found [403]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>7</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, St. Lawrence County, NY, 36089</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.co.st-lawrence.ny.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace574951483", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace574951483'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.96)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [41ede5eb14bd377f335ff089e32230bd, get {url=https://www.co.st-lawrence.ny.us/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.96, chrome: {chromedriverVersion: 148.0.7778.97 (6b3fa66a923a..., userDataDir: C:\Users\athir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59967}, goog:processID: 48860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59967/devtoo..., se:cdpVersion: 148.0.7778.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 41ede5eb14bd377f335ff089e32230bd
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+	at naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty(TC_4_NorthEast_CountyWebsiteValidation.java:91)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>64</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Susquehanna County, PA, 42115</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Washington County, NY, 36115</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Berks County, PA, 42011</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Indiana County, PA, 42063</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Salem County, NJ, 34033</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Sussex County, NJ, 34037</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Carbon County, PA, 42025</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lawrence County, PA, 42073</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Huntingdon County, PA, 42061</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Gloucester County, NJ, 34015</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Montgomery County, PA, 42091</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Herkimer County, NY, 36043</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Hudson County, NJ, 34017</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Clearfield County, PA, 42033</td>
+<td></td>
+<td>5</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Jefferson County, NY, 36045</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Cambria County, PA, 42021</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Dauphin County, PA, 42043</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Ontario County, NY, 36069</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Montgomery County, NY, 36057</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Cameron County, PA, 42023</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Warren County, PA, 42123</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Monroe County, PA, 42089</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Burlington County, NJ, 34005</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Erie County, NY, 36029</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Tioga County, PA, 42117</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lebanon County, PA, 42075</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Chester County, PA, 42029</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Essex County, NY, 36031</td>
+<td></td>
+<td>3</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Franklin County, NY, 36033</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Broome County, NY, 36007</td>
+<td></td>
+<td>17</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lehigh County, PA, 42077</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Otsego County, NY, 36077</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Fulton County, NY, 36035</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Monmouth County, NJ, 34025</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Oswego County, NY, 36075</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Yates County, NY, 36123</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Cumberland County, PA, 42041</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Madison County, NY, 36053</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Wyoming County, NY, 36121</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Orange County, NY, 36071</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Armstrong County, PA, 42005</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Hunterdon County, NJ, 34019</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Livingston County, NY, 36051</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Columbia County, PA, 42037</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Schuylkill County, PA, 42107</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Centre County, PA, 42027</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Clarion County, PA, 42031</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Hamilton County, NY, 36041</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Potter County, PA, 42105</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Greene County, NY, 36039</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Allegany County, NY, 37005</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Niagara County, NY, 36063</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Juniata County, PA, 42067</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Pike County, PA, 42103</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Warren County, NY, 36113</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Westmoreland County, PA, 42129</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Oneida County, NY, 36065</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Erie County, PA, 42049</td>
+<td></td>
+<td>4</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Chenango County, NY, 36017</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Seneca County, NY, 36099</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Delaware County, NY, 36025</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Philadelphia County, PA, 42101</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lycoming County, PA, 42081</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, McKean County, PA, 42083</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Blair County, PA, 42013</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Bradford County, PA, 42015</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Schoharie County, NY, 36095</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Clinton County, NY, 36019</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Somerset County, PA, 42111</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Montour County, PA, 42093</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Union County, NJ, 34039</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Bucks County, PA, 42017</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Mifflin County, PA, 42087</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Cumberland County, NJ, 34011</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Schenectady County, NY, 36093</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Saratoga County, NY, 36091</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Crawford County, PA, 42039</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Orleans County, NY, 36073</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Chemung County, NY, 36015</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Cattaraugus County, NY, 36009</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Jefferson County, PA, 42065</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Wayne County, PA, 40119</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Fulton County, PA, 42057</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lancaster County, PA, 42071</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Dutchess County, NY, 36027</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Sullivan County, NY, 36105</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Northumberland County, PA, 42097</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Wyoming County, PA, 42131</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Butler County, PA, 42019</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Franklin County, PA, 42055</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Tioga County, NY, 36107</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, York County, PA, 42133</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Wayne County, NY, 36117</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Nassau County, NY, 36059</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Forest County, PA, 42053</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Lackawanna County, PA, 42069</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Bedford County, PA, 42009</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, New York City, NY, 36061</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Fayette County, PA, 16075</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Westchester County, NY, 36119</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Chautauqua County, NY, 36013</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Columbia County, NY, 36021</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Luzerne County, PA, 42079</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Cortland County, NY, 36023</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Rensselaer County, NY, 36083</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Beaver County, PA, 42007</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Ocean County, NJ, 34029</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Schuyler County, NY, 36097</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: PA, Perry County, PA, 42099</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Onondaga County, NY, 36067</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Putnam County, NY, 36079</td>
+<td></td>
+<td>2</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NJ, Camden County, NJ, 34007</td>
+<td></td>
+<td>1</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+<tr>
+<td title='naco.testcases.TC_4_NorthEast_CountyWebsiteValidation.validateCounty()'><b>validateCounty</b><br>Test class: naco.testcases.TC_4_NorthEast_CountyWebsiteValidation<br>Parameters: NY, Monroe County, NY, 36055</td>
+<td></td>
+<td>0</td>
+<td>naco.testcases.TC_4_NorthEast_CountyWebsiteValidation@508dec2b</td></tr>
+</table><p>
+</body>
+</html>

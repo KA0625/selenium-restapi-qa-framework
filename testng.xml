@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Suite">
-<listeners>
-<listener class-name="naco.testresource.Listeners"></listener>
+
+<suite name="USA_County_Website_tests" parallel="tests" thread-count="5">
+   <listeners>
+<listener class-name="naco.reusablecomponent.listeners.Listeners"></listener>
 </listeners>
-  <test thread-count="5" name="Testie">
-  <packages>
-  <package name="naco.testcases">
+ 
+  <test name="MidWest">
+<classes>
+   <class name="naco.testcases.TC_3MidWest_EastNorth_CountyWebsiteValidation"/>
+     <class name="naco.testcases.TC_3_1_MidWest_WestNorth_CountyWebsitevalidation"/>
+    </classes>
+  </test>
   
-  </package></packages>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  <test name="Northeast_NewEngland">
+    <parameter name="stateList" value="'ME','MA','NH','VT'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>
+	    
+	</test>
+<test name="Northeast_MidAtlantic">
+	    <parameter name="stateList" value="'NJ','NY','PA'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>
+    
+</test>
+<test name="West">
+    <parameter name="stateList" value="'AZ','CO','ID','MT','NV','NM','UT','WY','AK','CA','HI','OR','WA'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test>
+<test name="SouthAtlantic">
+    <parameter name="stateList" value="'DE','DC','FL','GA','MD','NC','SC','VA','WV'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test> 
+<test name="South">
+    <parameter name="stateList" value="'AL','KY', 'MS', 'TN','AR', 'LA', 'OK', 'TX'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test>
+</suite>

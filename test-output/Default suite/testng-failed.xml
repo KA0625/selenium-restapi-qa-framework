@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="naco.testcases.TC1_ValidateCountyNos">
+      <class name="naco.testcases.TC_3MidWest_EastNorth_CountyWebsiteValidation">
         <methods>
-          <include name="StateCountyValidate" invocation-numbers="5"/>
+          <include name="validateCounty"/>
           <include name="teardown"/>
-          <include name="ILcountValidate"/>
-          <include name="findcounty"/>
           <include name="launchapplication"/>
-          <include name="StateCountyValidateExcel" invocation-numbers="4 36 7 41 42 43 12 44 45 46 47 48 49 50 51 52 53"/>
         </methods>
-      </class> <!-- naco.testcases.TC1_ValidateCountyNos -->
+      </class> <!-- naco.testcases.TC_3MidWest_EastNorth_CountyWebsiteValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

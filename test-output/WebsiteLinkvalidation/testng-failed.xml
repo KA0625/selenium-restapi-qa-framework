@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [WebsiteLinkvalidation]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="naco.reusablecomponent.listeners.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Northeast_NewEngland(failed)">
+    <parameter name="stateList" value="&#039;CT&#039;,&#039;ME&#039;,&#039;MA&#039;,&#039;NH&#039;,&#039;VT&#039;"/>
+    <classes>
+      <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation">
+        <methods>
+          <include name="teardown"/>
+          <include name="launchapplication"/>
+          <include name="validateCounty" invocation-numbers="33 34 35 36 5 37 38 40 41 42 11 43 44 45 46 20 28"/>
+        </methods>
+      </class> <!-- naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation -->
+    </classes>
+  </test> <!-- Northeast_NewEngland(failed) -->
+</suite> <!-- Failed suite [WebsiteLinkvalidation] -->
