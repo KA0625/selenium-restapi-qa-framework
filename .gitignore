@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# TestNG output
+test-output/
+
+# Allure
+allure-results/
+allure-report/
+
+#Extent Reports
+reports/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
