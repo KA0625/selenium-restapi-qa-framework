@@ -16,9 +16,14 @@ public class DynamicFeatureGenerator {
 		
 		Map<String, List<Object[]>> grouped = new LinkedHashMap<>();
 
-		for (Object[] row : Hooks.dynamicData) {
-			String state = (String) row[0];
-			grouped.computeIfAbsent(state, k -> new ArrayList<>()).add(row);
+		try {
+			for (Object[] row : Hooks.dynamicData) {
+				String state = (String) row[0];
+				grouped.computeIfAbsent(state, k -> new ArrayList<>()).add(row);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		// Generate one feature file per state

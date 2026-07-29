@@ -1,12 +1,7 @@
 package naco.reusablecomponent;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -16,14 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import org.testng.annotations.AfterTest;
-
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import naco.pageobject.Page1WelcomePage;
@@ -33,23 +22,21 @@ public class BaseTest {
 	public Page1WelcomePage p1;
 	public WebDriver driver;
 
-	@Test
-	public WebDriver initializeDriver() throws IOException {
+	 public ConfigReader config;
 
-		Properties prop = new Properties();
-
-		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "\\src\\test\\resources\\global.properties");
-
-		prop.load(fis);
-
-		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
-				: prop.getProperty("browser");
-
+	
+	 
+	public WebDriver initializeDriver(String browserName) throws IOException {
+		
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 
 			ChromeOptions options = new ChromeOptions();
+			
+			options.setAcceptInsecureCerts(true);
+			options.addArguments("--ignore-certificate-errors");
+			options.addArguments("--allow-insecure-localhost");
+
 			options.setExperimentalOption("excludeSwitches",
 					java.util.Arrays.asList("enable-logging", "enable-automation"));
 			options.setExperimentalOption("useAutomationExtension", false);
@@ -68,18 +55,24 @@ public class BaseTest {
 
 		return driver;
 	}
+	
 
-	public List<HashMap<String, String>> getJsonData() throws IOException {
+	
+	  @BeforeTest(alwaysRun = true)
+	
+	    public  void launchapplication() throws IOException {
 
-		String jsonfilepath = System.getProperty("user.dir") + "\\src\\test\\resources\\data.json";
+	        config = new ConfigReader();  
 
-		String content = FileUtils.readFileToString(new File(jsonfilepath), StandardCharsets.UTF_8);
-		ObjectMapper obm = new ObjectMapper();
-		List<HashMap<String, String>> data = obm.readValue(content, new TypeReference<List<HashMap<String, String>>>() {
-		});
+	      WebDriver  driver = initializeDriver(config.getBrowser());
+	    
+	       p1 = new Page1WelcomePage(driver);
+	     
 
-		return data;
-	}
+	      driver.get(config.getBaseUrl());
+	      
+	    }
+	
 
 	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
 
@@ -101,17 +94,10 @@ public class BaseTest {
 		return destinationPath;
 	}
 
-	@BeforeTest(alwaysRun = true)
 
-	public Page1WelcomePage launchapplication() throws IOException {
-
-		driver = initializeDriver();
-		p1 = new Page1WelcomePage(driver);
-		p1.url();
-		return p1;
-	}
 
 	@AfterTest
+
 	public void teardown() {
 		driver.quit();
 	}

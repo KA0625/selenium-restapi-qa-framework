@@ -1,8 +1,6 @@
 package naco.pageobject;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,28 +31,17 @@ public class Page1WelcomePage extends AbstractComponents{
 
 	
 
-	public void url() throws IOException {
-		// TODO Auto-generated method stub
-		Properties	 prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\global.properties");	
-				
-		prop.load(fis);
-		 // Jenkins override OR fallback to global.properties
-	    String baseUrl = System.getProperty("baseUrl") != null
-	            ? System.getProperty("baseUrl")
-	            : prop.getProperty("baseUrl");
-
-	    driver.get(baseUrl);
-	 
+	
+	public Page2CountyExpolorerPage GoToCountyExplorer() {
+		
+		
 
 		
 		
-	}
-	
-	
-	public Page2CountyExpolorerPage WelcomeOptions() {
-		waitforwEBelement(County);
-		impwait();
+		waitforWebElementVisible(County);
+		waitForClickable(County);
+
+		
 		County.click();
 		Page2CountyExpolorerPage p2 =new Page2CountyExpolorerPage(driver);
 		return p2;

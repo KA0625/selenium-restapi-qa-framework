@@ -1,48 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="USA_County_Website_tests" parallel="tests" thread-count="5">
+<suite name="USA_County_Website_tests" parallel="tests" thread-count="8">
    <listeners>
 <listener class-name="naco.reusablecomponent.listeners.Listeners"></listener>
 </listeners>
- 
-  <test name="MidWest">
-<classes>
-   <class name="naco.testcases.TC_3MidWest_EastNorth_CountyWebsiteValidation"/>
-     <class name="naco.testcases.TC_3_1_MidWest_WestNorth_CountyWebsitevalidation"/>
-    </classes>
-  </test>
   
-  <test name="Northeast_NewEngland">
-    <parameter name="stateList" value="'ME','MA','NH','VT'"/>
-    <classes>
-        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
-    </classes>
-	    
-	</test>
-<test name="Northeast_MidAtlantic">
-	    <parameter name="stateList" value="'NJ','NY','PA'"/>
-    <classes>
-        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
-    </classes>
-    
-</test>
-<test name="West">
-    <parameter name="stateList" value="'AZ','CO','ID','MT','NV','NM','UT','WY','AK','CA','HI','OR','WA'"/>
-    <classes>
-        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+  	<test name="SouthAtlantic_json">
+   <classes>
+        <class name="naco.testcases.TC6_South_JSON_CountyWebsitevalidate"/>
     </classes>    
 </test>
-<test name="SouthAtlantic">
-    <parameter name="stateList" value="'DE','DC','FL','GA','MD','NC','SC','VA','WV'"/>
+
+<test name="MidWest_DB">
+    <classes>
+        <class name="naco.testcases.TC_3MidWest_EastNorth_CountyWebsiteValidation"/>
+     </classes>
+  </test>
+
+
+<test name="Northeast_excel">
+    <classes>
+       <class name="naco.testcases.TC5_Northeast_Excel_CountyWebsiteValidation"/>
+    </classes>
+</test>
+
+ <test name="West_prameterized">
+    <parameter name="stateList" value="'AZ'"/> 
     <classes>
         <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
     </classes>    
 </test> 
-<test name="South">
-    <parameter name="stateList" value="'AL','KY', 'MS', 'TN','AR', 'LA', 'OK', 'TX'"/>
+
+
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--
+	
+  
+	  
+//,'CO','ID','MT','NV','NM','UT','WY','AK','CA','HI','OR','WA'
+
+<test name="West">
+    <parameter name="stateList" value="'AZ','CO'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test> 
+<test name="West1">
+    <parameter name="stateList" value="'ID','MT'"/>
     <classes>
         <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
     </classes>    
 </test>
+
+<test name="West2">
+    <parameter name="stateList" value="'NV','NM'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test>
+<test name="West3">
+    <parameter name="stateList" value="'UT','WY'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test>
+<test name="West4">
+    <parameter name="stateList" value="'AK','CA'"/>
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test>
+
+
+ 
+-->
+
 </suite>

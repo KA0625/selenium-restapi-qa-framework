@@ -16,24 +16,33 @@ public class AbstractComponents {
 
 	public AbstractComponents(WebDriver driver) {
 		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
-	public void waitforelement(By visiblefindby) {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	public void waitForElementVisible(By visiblefindby) {
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(visiblefindby));
 
 	}
 
-	public void waitforwEBelement(WebElement visiblefindby) {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	public void waitforWebElementVisible(WebElement visiblefindby) {
+	
 		wait.until(ExpectedConditions.visibilityOf(visiblefindby));
 
 	}
 
-	public void waitforelementin(By invisiblefindby) {
-
-		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(invisiblefindby)));
-	}
+	   public void waitForElementInvisible(By locator) {
+	        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	        
+	    }
+	   public void waitForClickable(WebElement element) {
+	        wait.until(ExpectedConditions.elementToBeClickable(element));
+	    }
+	   public void clickWhenReady(WebElement element) {
+	        waitForClickable(element);
+	        element.click();
+	    }
+	
 
 	public void impwait() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -43,7 +52,7 @@ public class AbstractComponents {
 
 	public boolean IsElementVisible(WebElement visible) {
 		try {
-			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			
 			wait.until(ExpectedConditions.visibilityOf(visible));
 			return true;
 		} catch (Exception e) {

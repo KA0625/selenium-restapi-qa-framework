@@ -29,8 +29,7 @@ public class Page2CountyExpolorerPage extends AbstractComponents {
 	WebElement searchtoggle;
 	@FindBy(id = "ce-search")
 	WebElement searchbox;
-	@FindBy(xpath = "//*[clas='icon menu']")
-	WebElement expandbar;
+	
 	@FindBy(id = "ce_nav_var")
 	WebElement map;
 	@FindBy(id = "ce-search-clear")
@@ -61,7 +60,7 @@ public class Page2CountyExpolorerPage extends AbstractComponents {
 	public int ILcountysize() {
 		impwait();
 		map.click();
-		map.click();
+		map.click();//need to click twice due to DOM refesh issue.
 		int ILcountyCount = ILcounty.size();
 		return ILcountyCount;
 	}
@@ -101,6 +100,7 @@ public class Page2CountyExpolorerPage extends AbstractComponents {
 
 	
 	public Map<String, String> getcountyfips(String state) {
+		
 		List<String> countyinfolist = getStateCountyNames(state);
 		
 		Map<String, String> info=new LinkedHashMap<>();
@@ -109,11 +109,11 @@ public class Page2CountyExpolorerPage extends AbstractComponents {
 			//driver.manage().window().maximize();
 			searchbox.click();
 			searchbox.sendKeys(county);
-			waitforwEBelement(searchresultlist);
+			waitforWebElementVisible(searchresultlist);
 
 			Actions actions = new Actions(driver);
 			actions.moveToElement(searchresultlist).click().perform();
-			waitforwEBelement(countyclosebtn);
+			waitforWebElementVisible(countyclosebtn);
 
 		String newurl = driver.getCurrentUrl();
 		System.out.println(county + "--" + newurl);

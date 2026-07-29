@@ -11,7 +11,7 @@ public class ExternalReport {
     public static ExtentReports getReportObject() {
 
         if (extent == null) {
-            String path = System.getProperty("user.dir") + "\\reports\\index.html";
+            String path = System.getProperty("user.dir") + "\\Extentreports\\index.html";
 
             ExtentSparkReporter reporter = new ExtentSparkReporter(path);
             reporter.config().setReportName("Automation NACO county result");

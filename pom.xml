@@ -19,24 +19,35 @@
 
   <build>
   <plugins>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.11.0</version>
+    <configuration>
+        <release>17</release> <!-- or 21 if your JDK supports it -->
+    </configuration>
+</plugin>
+
    <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <version>3.2.5</version>
   <configuration>
     <testFailureIgnore>true</testFailureIgnore>
-    <!-- optional: exclude while running for cucumber test.
-    <excludes>
-      <exclude>**/naco/testcases/**</exclude>
-    </excludes> -->
+  <!-- optional: exclude while running for cucumber test.-->
+ 
   </configuration>
 </plugin>
 
       <plugin>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-maven</artifactId>
-        <version>2.11.2</version>
-      </plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>2.11.2</version>
+    <configuration>
+         <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
+    </configuration>
+</plugin>
+
 
       <!--
       Commented out: masterthought maven-cucumber-reporting requires target/jsonReports.
@@ -104,6 +115,12 @@
       <version>8.0.33</version>
     </dependency>
 
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>7.14.0</version> <!-- match your cucumber version -->
+    
+</dependency>
 
     <!-- Selenium -->
     <dependency>
@@ -112,14 +129,14 @@
       <version>4.43.0</version>
     </dependency>
 
-    <!-- Comment out TestNG if you want Cucumber execution through Jenkins.
-    -->
+    <!-- Comment out TestNG if you want Cucumber execution through Jenkins.-->
+    
     
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.12.0</version>
-      <scope>test</scope>
+      
     </dependency>
     
 
