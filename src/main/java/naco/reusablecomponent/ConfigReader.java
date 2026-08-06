@@ -21,10 +21,11 @@ public class ConfigReader {
     }
 
     public String getBrowser() {
-        return System.getProperty("browser") != null
-                ? System.getProperty("browser")
-                : prop.getProperty("browser");
+        if (System.getenv("BROWSER") != null) return System.getenv("BROWSER");
+        if (System.getProperty("browser") != null) return System.getProperty("browser");
+        return prop.getProperty("browser");
     }
+
     
     public boolean getRunOnGrid() {
         return System.getProperty("runOnGrid") != null
