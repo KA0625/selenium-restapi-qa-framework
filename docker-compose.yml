@@ -1,58 +1,60 @@
-version: '2'
+version: "3.8"
 
 services:
-
   selenium-hub:
-    image: selenium/hub:latest
+    image: selenium/hub:4.43.0
     ports:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
+    restart: unless-stopped
 
   chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome:4.43.0
     shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
-    ports:
-      - "5900-5949:5900"
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-  edge:
-    image: selenium/node-edge:latest
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-    ports:
-      - "5950-5999:5900"
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+    restart: unless-stopped
 
   firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox:4.43.0
     shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
-    ports:
-      - "6000-6049:5900"
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+    restart: unless-stopped
+
+  edge:
+    image: selenium/node-edge:4.43.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+    restart: unless-stopped
+
+  test-runner:
+    build: .
+    environment:
+      - runOnGrid=true
+      - browser=chrome
+      - SELENIUM_HUB_URL=http://selenium-hub:4444/wd/hub
+      - DOCKER_MAVEN_ARGS=
+    volumes:
+      - ./:/workspace
+      - ./screenshots:/workspace/screenshots
+      - ./test-output:/workspace/test-output
+    working_dir: /workspace
+    restart: "no"

@@ -34,10 +34,6 @@ public class Page1WelcomePage extends AbstractComponents{
 	
 	public Page2CountyExpolorerPage GoToCountyExplorer() {
 		
-		
-
-		
-		
 		waitforWebElementVisible(County);
 		waitForClickable(County);
 

@@ -25,7 +25,7 @@ public class Page2CountyExpolorerPage extends AbstractComponents {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[@class='icon search_toggle']")
+	@FindBy(xpath = "(//*[@class='icon search'])[2]")
 	WebElement searchtoggle;
 	@FindBy(id = "ce-search")
 	WebElement searchbox;

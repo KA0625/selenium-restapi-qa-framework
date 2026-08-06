@@ -101,7 +101,7 @@ public class Page3CountyInfo extends AbstractComponents {
         }
     }
 
-    // Classify WebDriverException
+   // Classify WebDriverException
     public int classifyWebDriverException(WebDriverException e) {
         String msg = e.getMessage() == null ? "" : e.getMessage().toLowerCase();
         Throwable cause = e.getCause();
@@ -115,7 +115,7 @@ public class Page3CountyInfo extends AbstractComponents {
     }
 
     // CDP status capture
-    private int tryGetStatusWithCDP(String link) {
+   /* private int tryGetStatusWithCDP(String link) {
         if (!(driver instanceof ChromeDriver)) {
             return -1;
         }
@@ -166,7 +166,7 @@ public class Page3CountyInfo extends AbstractComponents {
         return statusCode[0];
     }
 
-    // Main method used by tests
+  /*  // Main method used by tests
     public int getBrokenLinkCDP(String link) {
         if (link == null || link.trim().isEmpty()) return -1;
 
@@ -198,14 +198,25 @@ public class Page3CountyInfo extends AbstractComponents {
         }
 
         return getHttpStatusFallback(link);
+    }*/
+    public int getStatusHybrid(String url) {
+
+        // 1. Try RestAssured GET first (fast + works on Grid)
+        int restStatus = getLinkStatusCode(url);
+        if (restStatus > 0) {
+            return restStatus;
+        }
+
+        // 2. Fallback to HTTP probe (works everywhere)
+        return getHttpStatusFallback(url);
     }
 
     // Hybrid helper
-    public int getStatusHybrid(String url) {
+  /*  public int getStatusHybrid(String url) {
         int status = getBrokenLinkCDP(url);
         if (status == -1) {
             status = getHttpStatusFallback(url);
         }
         return status;
-    }
+    }*/
 }

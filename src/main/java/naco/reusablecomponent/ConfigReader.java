@@ -25,5 +25,12 @@ public class ConfigReader {
                 ? System.getProperty("browser")
                 : prop.getProperty("browser");
     }
+    
+    public boolean getRunOnGrid() {
+        return System.getProperty("runOnGrid") != null
+                ? Boolean.parseBoolean(System.getProperty("runOnGrid"))
+                : Boolean.parseBoolean(prop.getProperty("runOnGrid"));
+    }
+
 
 }

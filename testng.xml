@@ -24,15 +24,25 @@
        <class name="naco.testcases.TC5_Northeast_Excel_CountyWebsiteValidation"/>
     </classes>
 </test>
+<test name="MiddleAtlantic_excel">
+    <classes>
+       <class name="naco.testcases.TC7_MiddleAtlantic_excel_Countyvalidate"/>
+    </classes>
+</test>
 
  <test name="West_prameterized">
-    <parameter name="stateList" value="'AZ'"/> 
+    <parameter name="stateList" value="'CO'"/> 
     <classes>
         <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
     </classes>    
 </test> 
 
-
+<test name="Wt_prameterized">
+    <parameter name="stateList" value="'IA'"/> 
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test> 
 
   
  
@@ -49,7 +59,12 @@
  
  <!--
 	
-  
+  <test name="West_prameterizedone">
+    <parameter name="stateList" value="'ID'"/> 
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test> 
 	  
 //,'CO','ID','MT','NV','NM','UT','WY','AK','CA','HI','OR','WA'
 

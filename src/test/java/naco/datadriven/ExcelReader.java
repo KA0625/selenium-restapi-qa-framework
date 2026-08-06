@@ -14,9 +14,29 @@ public class ExcelReader {
 		public List<String> getDatafromExceltc5()  {
 
 			List<String> states = new ArrayList<>();
-			try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\USA_State.xlsx");
+			try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/USA_State.xlsx");
 					XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 				XSSFSheet sheet = workbook.getSheet("East"); //"NorthEast"
+				DataFormatter formatter = new DataFormatter();
+				
+
+				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+					String stateCode = formatter.formatCellValue(sheet.getRow(i).getCell(1));
+					System.out.println("Read state code from Excel: " + stateCode);
+					states.add(stateCode);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return states;
+		}
+		
+		public List<String> getDatafromExceltc7()  {
+
+			List<String> states = new ArrayList<>();
+			try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/USA_State.xlsx");
+					XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+				XSSFSheet sheet = workbook.getSheet("Middle"); //"NorthEast"
 				DataFormatter formatter = new DataFormatter();
 				
 
@@ -34,7 +54,7 @@ public class ExcelReader {
 		DataFormatter format=new DataFormatter();
 		
 		   public Object[][] getExcelDatatc1() throws IOException  {
-			   FileInputStream file = new FileInputStream("C:\\Users\\athir\\eclipse-workspace\\AthiraiExecution.NACO\\USA_State.xlsx");
+			   FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/USA_State.xlsx");
 				XSSFWorkbook workbook = new XSSFWorkbook(file); 
 				XSSFSheet sheet1 = workbook.getSheetAt(0); 
 				
