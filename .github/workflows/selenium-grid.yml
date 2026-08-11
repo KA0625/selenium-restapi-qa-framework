@@ -42,6 +42,7 @@ jobs:
         run: |
           mvn clean test \
             -Dbrowser=chrome \
+            -DrunOnGrid=true \
             -Dselenium.hub.url=http://localhost:4444/wd/hub
 
       - name: Upload Test Reports
