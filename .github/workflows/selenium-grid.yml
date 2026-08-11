@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Start Selenium Grid (Hub + Chrome Node)
+      - name: Start Selenium Grid (Hub + 4 Chrome Nodes)
         run: |
           docker pull selenium/hub:4.43.0
           docker pull selenium/node-chrome:4.43.0
@@ -29,14 +29,32 @@ jobs:
 
           docker run -d --network grid --name selenium-hub -p 4444:4444 selenium/hub:4.43.0
 
-          docker run -d --network grid --name chrome \
+          docker run -d --network grid --name chrome1 \
+            -e SE_EVENT_BUS_HOST=selenium-hub \
+            -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+            -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+            selenium/node-chrome:4.43.0
+
+          docker run -d --network grid --name chrome2 \
+            -e SE_EVENT_BUS_HOST=selenium-hub \
+            -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+            -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+            selenium/node-chrome:4.43.0
+
+          docker run -d --network grid --name chrome3 \
+            -e SE_EVENT_BUS_HOST=selenium-hub \
+            -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+            -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+            selenium/node-chrome:4.43.0
+
+          docker run -d --network grid --name chrome4 \
             -e SE_EVENT_BUS_HOST=selenium-hub \
             -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
             -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
             selenium/node-chrome:4.43.0
 
           echo "Waiting for Selenium Grid to be ready..."
-          sleep 10
+          sleep 15
 
       - name: Run Tests on Cloud Selenium Grid
         run: |
