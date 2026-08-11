@@ -24,8 +24,12 @@ public class Page1WelcomePage extends AbstractComponents{
 	WebElement CountyData;
 	@FindBy(xpath="//*[text()='Advocacy profiles']")
     WebElement profiles;
-    @FindBy(xpath="//*[text()='find a county']")
-    WebElement County;
+	////*[@id='welcome-screen']/div[3]
+	/// ////*[text()='find a county']
+	// Handles uppercase/lowercase variations across Linux/Windows Chrome engines
+	@FindBy(xpath = "//div[@class='ce-button']//div[contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'find a county')]")
+	WebElement County;
+  
     @FindBy(xpath="//*[text()='Keep me updated']")
     WebElement Update;
 

@@ -20,7 +20,7 @@ public class DataBaseReader {
 		String url = "jdbc:mysql://" + host + ":" + port + "/" + databaseName;*/
 		//host.docker.internal
 
-		//String url = "jdbc:mysql://localhost:3306/naco";
+		//String url = "jdbc:mysql://localhost:3306/naco"; //change to run on testng
 		String url = "jdbc:mysql://host.docker.internal:3306/naco";
 		Connection con = DriverManager.getConnection(url, "root", "Selenium2025");
 		Statement s = con.createStatement();

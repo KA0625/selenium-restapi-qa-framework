@@ -5,33 +5,36 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-	private Properties prop;
+    private Properties prop;
 
-    public ConfigReader() throws IOException {
+    public ConfigReader() {
         prop = new Properties();
-        FileInputStream fis = new FileInputStream(
-                System.getProperty("user.dir") + "/src/test/resources/global.properties");
-        prop.load(fis);
+        try {
+            FileInputStream fis = new FileInputStream(
+                    System.getProperty("user.dir") + "/src/test/resources/global.properties");
+            prop.load(fis);
+        } catch (IOException e) {
+            System.err.println("Could not load global.properties, using defaults.");
+        }
     }
 
     public String getBaseUrl() {
-        return System.getProperty("baseUrl") != null
-                ? System.getProperty("baseUrl")
-                : prop.getProperty("baseUrl");
+        String env = System.getenv("BASE_URL");
+        String sys = System.getProperty("baseUrl");
+        return env != null ? env : (sys != null ? sys : prop.getProperty("baseUrl"));
     }
 
     public String getBrowser() {
-        if (System.getenv("BROWSER") != null) return System.getenv("BROWSER");
-        if (System.getProperty("browser") != null) return System.getProperty("browser");
-        return prop.getProperty("browser");
+        String env = System.getenv("BROWSER");
+        String sys = System.getProperty("browser");
+        return env != null ? env : (sys != null ? sys : prop.getProperty("browser", "chrome"));
     }
 
-    
     public boolean getRunOnGrid() {
-        return System.getProperty("runOnGrid") != null
-                ? Boolean.parseBoolean(System.getProperty("runOnGrid"))
-                : Boolean.parseBoolean(prop.getProperty("runOnGrid"));
+        String env = System.getenv("RUN_ON_GRID");
+        String sys = System.getProperty("runOnGrid");
+        return env != null ? Boolean.parseBoolean(env)
+                : (sys != null ? Boolean.parseBoolean(sys)
+                : Boolean.parseBoolean(prop.getProperty("runOnGrid", "true")));
     }
-
-
 }

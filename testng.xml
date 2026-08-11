@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="USA_County_Website_tests" parallel="tests" thread-count="8">
+<suite name="USA_County_Website_tests" parallel="tests" thread-count="4">
    <listeners>
 <listener class-name="naco.reusablecomponent.listeners.Listeners"></listener>
 </listeners>
@@ -24,11 +24,6 @@
        <class name="naco.testcases.TC5_Northeast_Excel_CountyWebsiteValidation"/>
     </classes>
 </test>
-<test name="MiddleAtlantic_excel">
-    <classes>
-       <class name="naco.testcases.TC7_MiddleAtlantic_excel_Countyvalidate"/>
-    </classes>
-</test>
 
  <test name="West_prameterized">
     <parameter name="stateList" value="'CO'"/> 
@@ -37,12 +32,7 @@
     </classes>    
 </test> 
 
-<test name="Wt_prameterized">
-    <parameter name="stateList" value="'IA'"/> 
-    <classes>
-        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
-    </classes>    
-</test> 
+
 
   
  
@@ -58,6 +48,18 @@
  
  
  <!--
+	<test name="Wt_prameterized">
+    <parameter name="stateList" value="'IA'"/> 
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>    
+</test> 
+	<test name="MiddleAtlantic_excel">
+    <classes>
+       <class name="naco.testcases.TC7_MiddleAtlantic_excel_Countyvalidate"/>
+    </classes>
+</test>
+
 	
   <test name="West_prameterizedone">
     <parameter name="stateList" value="'ID'"/> 

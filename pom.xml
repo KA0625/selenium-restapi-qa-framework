@@ -14,83 +14,53 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>24</maven.compiler.release>
+    <!-- Aligned to Java 17 for container execution -->
+    <maven.compiler.release>17</maven.compiler.release>
+    
+  
   </properties>
 
   <build>
-  <resources>
-        <resource>
-            <directory>src/test/resources</directory>
-            <excludes>
-                <exclude>**/*.feature</exclude>
-            </excludes>
-        </resource>
+    <resources>
+      <resource>
+        <directory>src/test/resources</directory>
+        <excludes>
+          <exclude>**/*.feature</exclude>
+        </excludes>
+      </resource>
     </resources>
-  <plugins>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.11.0</version>
-    <configuration>
-        <release>17</release> <!-- or 21 if your JDK supports it -->
-    </configuration>
-</plugin>
-
-   <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <version>3.2.5</version>
-  <configuration>
-   <suiteXmlFiles>
-    <suiteXmlFile>testng.xml</suiteXmlFile>
-</suiteXmlFiles>
-
-  </configuration>
-</plugin>
-
-    <!--  <plugin>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-maven</artifactId>
-    <version>2.11.2</version>
-    <configuration>
-         <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
-    </configuration>
-</plugin> -->
-
-
-      <!--
-      Commented out: masterthought maven-cucumber-reporting requires target/jsonReports.
-      If you want to use it later, re-enable and ensure Cucumber writes JSON to target/jsonReports.
-      -->
-      <!--
+    
+    <plugins>
       <plugin>
-        <groupId>net.masterthought</groupId>
-        <artifactId>maven-cucumber-reporting</artifactId>
-        <version>5.0.0</version>
-        <executions>
-          <execution>
-            <id>execution</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <projectName>cucumber-jvm-example</projectName>
-              <skip>false</skip>
-              <outputDirectory>${project.build.directory}</outputDirectory>
-              <inputDirectory>${project.build.directory}/jsonReports</inputDirectory>
-              <jsonFiles>
-                <param>**/*.json</param>
-              </jsonFiles>
-              <parallelTesting>false</parallelTesting>
-              <mergeFeaturesById>false</mergeFeaturesById>
-              <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
-              <checkBuildResult>false</checkBuildResult>
-            </configuration>
-          </execution>
-        </executions>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
       </plugin>
-      -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+      
+    <parallel>tests</parallel>
+    <threadCount>4</threadCount>
+<forkCount>1</forkCount>
+        <reuseForks>true</reuseForks>
+
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <!-- Pass CLI arguments down to TestNG system properties -->
+          <systemPropertyVariables>
+            <browser>${browser}</browser>
+            <runOnGrid>${runOnGrid}</runOnGrid>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -103,7 +73,7 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Cucumber JUnit (JUnit4 runner) - required for @RunWith(Cucumber.class) -->
+    <!-- Cucumber JUnit -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
@@ -111,7 +81,14 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Selenium, WebDriverManager, DB connector, etc. -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>7.15.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Selenium & Drivers -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
@@ -119,37 +96,26 @@
     </dependency>
 
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.33</version>
-    </dependency>
-
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-picocontainer</artifactId>
-    <version>7.14.0</version> <!-- match your cucumber version -->
-    
-</dependency>
-
-    <!-- Selenium -->
-    <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.43.0</version>
     </dependency>
 
-    <!-- Comment out TestNG if you want Cucumber execution through Jenkins.-->
-    
-    
+    <!-- Database -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
+
+    <!-- TestNG -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.12.0</version>
-      
     </dependency>
-    
 
-    <!-- Logging, reporting, utilities -->
+    <!-- Logging & Reporting -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>

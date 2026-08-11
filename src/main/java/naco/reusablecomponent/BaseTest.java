@@ -1,8 +1,6 @@
 package naco.reusablecomponent;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -10,11 +8,16 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -26,39 +29,20 @@ public class BaseTest {
     public WebDriver driver;
     public ConfigReader config;
 
-    private boolean isRunningInContainer() {
-        try {
-            // Primary check for Docker
-            if (new File("/.dockerenv").exists()) {
-                return true;
-            }
-            // Secondary check: if OS is Linux but not WSL/host, assume container
-            String os = System.getProperty("os.name");
-            if (os != null && os.toLowerCase().contains("linux")) {
-                // This is a heuristic; /.dockerenv is the most reliable check.
-                return false;
-            }
-        } catch (Exception e) {
-            // ignore and assume not in container
-        }
-        return false;
-    }
-
     public WebDriver initializeDriver(String browserName) throws IOException {
 
         config = new ConfigReader();
         boolean runOnGrid = config.getRunOnGrid();
 
-        // Decide hub URL based on runtime environment (same JVM that creates the driver)
-        String hubUrl = "http://localhost:4444/wd/hub";
-        boolean inContainer = isRunningInContainer();
-        if (inContainer) {
-            hubUrl = "http://selenium-hub:4444/wd/hub";
+        // Resolve Hub URL from Docker environment variable or default to localhost
+        String hubUrl = System.getenv("SELENIUM_HUB_URL");
+        if (hubUrl == null || hubUrl.isEmpty()) {
+            hubUrl = System.getProperty("hubUrl", "http://localhost:4444/wd/hub");
         }
-        System.out.println("RunOnGrid=" + runOnGrid + " | RunningInContainer=" + inContainer + " | HubURL=" + hubUrl);
+
+        System.out.println("Initializing Driver | Browser=" + browserName + " | RunOnGrid=" + runOnGrid + " | HubURL=" + hubUrl);
 
         try {
-
             if (runOnGrid) {
                 // -----------------------------
                 // RUNNING ON SELENIUM GRID
@@ -67,9 +51,11 @@ public class BaseTest {
                     ChromeOptions options = new ChromeOptions();
                     options.setAcceptInsecureCerts(true);
                     options.addArguments("--disable-gpu");
+                    options.addArguments("--window-size=1920,1080");
                     options.addArguments("--no-sandbox");
+                    options.addArguments("--dns-prefetch-disable");
+                    options.addArguments("--ignore-certificate-errors");
                     options.addArguments("--disable-dev-shm-usage");
-
                     driver = new RemoteWebDriver(new URL(hubUrl), options);
 
                 } else if (browserName.equalsIgnoreCase("firefox")) {
@@ -81,6 +67,8 @@ public class BaseTest {
                     EdgeOptions options = new EdgeOptions();
                     options.setAcceptInsecureCerts(true);
                     driver = new RemoteWebDriver(new URL(hubUrl), options);
+                } else {
+                    throw new IllegalArgumentException("Unsupported browser type: " + browserName);
                 }
 
             } else {
@@ -91,15 +79,17 @@ public class BaseTest {
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setAcceptInsecureCerts(true);
-                    driver = new org.openqa.selenium.chrome.ChromeDriver(options);
+                    driver = new ChromeDriver(options);
 
                 } else if (browserName.equalsIgnoreCase("firefox")) {
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new org.openqa.selenium.firefox.FirefoxDriver();
+                    driver = new FirefoxDriver();
 
                 } else if (browserName.equalsIgnoreCase("edge")) {
                     WebDriverManager.edgedriver().setup();
-                    driver = new org.openqa.selenium.edge.EdgeDriver();
+                    driver = new EdgeDriver();
+                } else {
+                    throw new IllegalArgumentException("Unsupported browser type: " + browserName);
                 }
             }
 
@@ -113,7 +103,6 @@ public class BaseTest {
 
     @BeforeTest(alwaysRun = true)
     public void launchapplication() throws IOException {
-
         config = new ConfigReader();
         driver = initializeDriver(config.getBrowser());
 
@@ -124,12 +113,14 @@ public class BaseTest {
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String destinationPath = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
+        String destinationPath = System.getProperty("user.dir") 
+                + File.separator + "screenshots" 
+                + File.separator + testCaseName + ".png";
         FileUtils.copyFile(source, new File(destinationPath));
         return destinationPath;
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void teardown() {
         if (driver != null) {
             driver.quit();
