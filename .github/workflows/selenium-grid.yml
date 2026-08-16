@@ -35,6 +35,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Install MySQL Client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mysql-client
+
       - name: Wait for MySQL to be ready
         run: |
           echo "Waiting for MySQL to be ready..."
