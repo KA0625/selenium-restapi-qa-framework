@@ -50,6 +50,27 @@ public class ExcelReader {
 			}
 			return states;
 		}
+		
+		
+		public List<String> getDatafromExceltc9()  {
+
+			List<String> states = new ArrayList<>();
+			try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/USA_State.xlsx");
+					XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+				XSSFSheet sheet = workbook.getSheet("West"); //"NorthEast"
+				DataFormatter formatter = new DataFormatter();
+				
+
+				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+					String stateCode = formatter.formatCellValue(sheet.getRow(i).getCell(1));
+					System.out.println("Read state code from Excel: " + stateCode);
+					states.add(stateCode);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return states;
+		}
 		//tc1
 		DataFormatter format=new DataFormatter();
 		

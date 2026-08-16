@@ -16,7 +16,7 @@ import naco.pageobject.Page3CountyInfo;
 import naco.reusablecomponent.BaseTest;
 import naco.reusablecomponent.listeners.Listeners;
 
-public class TC_3MidWest_EastNorth_CountyWebsiteValidation extends BaseTest {
+public class TC10_West_DB_CountyValidation extends BaseTest { 
 	Page2CountyExpolorerPage p2;
 	Page3CountyInfo p3;
 
@@ -27,8 +27,8 @@ public class TC_3MidWest_EastNorth_CountyWebsiteValidation extends BaseTest {
 
 		p2 = p1.GoToCountyExplorer();
 		p2.toggleclick();
-		//'IL', 'IN', 'MI', 'OH', 'WI'
-		 String EastNorthQuery = "SELECT StateCode FROM USA WHERE StateCode IN ('WI','OH')";
+	
+		 String EastNorthQuery = "SELECT StateCode FROM USA WHERE StateCode IN ('SD','MI')";
 		    List<String> states = DataBaseReader.getDatafromDB(EastNorthQuery);
 		List<Object[]> allCountyRows = new ArrayList<>();
 		for (String stateCode : states) {
@@ -80,5 +80,5 @@ public class TC_3MidWest_EastNorth_CountyWebsiteValidation extends BaseTest {
 	}
 	}
 
-}
 
+}

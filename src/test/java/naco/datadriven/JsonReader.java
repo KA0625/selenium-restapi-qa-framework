@@ -38,6 +38,17 @@ public class JsonReader {
 
         return stateCodes;
     }
+	public List<String> getStateCodestc8Json() throws IOException {
+
+        List<HashMap<String, String>> data = getJsonData("South.json");
+        List<String> stateCodes = new ArrayList<>();
+
+        for (HashMap<String, String> map : data) {
+            stateCodes.add(map.get("state"));  
+        }
+
+        return stateCodes;
+    }
 	
 	public Object[][] getDatatc1() throws IOException {
 		

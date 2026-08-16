@@ -3,6 +3,17 @@
 	{
 	        "state": "AL",
 	        "statename": "Alabama"
-	    }
-	
+	    },
+		{
+		     "state": "WV",
+		     "statename": "West Virginia"
+		 },
+		 {
+		     "state": "DE",
+		     "statename": "Delaware"
+		 },
+		 {
+		     "state": "FL",
+		     "statename": "Florida"
+		 }
 	]

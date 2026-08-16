@@ -34,12 +34,21 @@
 
 
 
-  
+   
+	<test name="MiddleAtlantic_excel">
+    <classes>
+       <class name="naco.testcases.TC7_MiddleAtlantic_excel_Countyvalidate"/>
+    </classes>
+</test>
  
  
+ <test name="Wt_prameterized">
+    <parameter name="stateList" value="'IA'"/> 
+    <classes>
+        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
+    </classes>
  
- 
- 
+ </test>
  
  
  
@@ -48,17 +57,8 @@
  
  
  <!--
-	<test name="Wt_prameterized">
-    <parameter name="stateList" value="'IA'"/> 
-    <classes>
-        <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
-    </classes>    
-</test> 
-	<test name="MiddleAtlantic_excel">
-    <classes>
-       <class name="naco.testcases.TC7_MiddleAtlantic_excel_Countyvalidate"/>
-    </classes>
-</test>
+	    
+
 
 	
   <test name="West_prameterizedone">

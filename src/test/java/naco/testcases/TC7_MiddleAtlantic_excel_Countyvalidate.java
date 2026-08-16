@@ -22,10 +22,6 @@ public class TC7_MiddleAtlantic_excel_Countyvalidate extends BaseTest {
 				Page2CountyExpolorerPage p2;
 				Page3CountyInfo p3;
 				
-				
-				
-
-				
 				@DataProvider(name = "NorthEastCountyFipsData", parallel = true)
 				public Object[][] countyFipsProvider(ITestContext context)  {
 					

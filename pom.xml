@@ -26,7 +26,7 @@
         <directory>src/test/resources</directory>
         <excludes>
           <exclude>**/*.feature</exclude>
-        </excludes>
+        </excludes> 
       </resource>
     </resources>
     
@@ -51,9 +51,10 @@
 <forkCount>1</forkCount>
         <reuseForks>true</reuseForks>
 
-          <suiteXmlFiles>
+        <!--  <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
+             <suiteXmlFile>testng-firefox.xml</suiteXmlFile>
+          </suiteXmlFiles> -->
           <!-- Pass CLI arguments down to TestNG system properties -->
           <systemPropertyVariables>
             <browser>${browser}</browser>

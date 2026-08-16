@@ -1,12 +1,6 @@
 [
-    {
-        "state": "AL",
-        "statename": "Alabama"
-    },
-    {
-        "state": "KY",
-        "statename": "Kentucky"
-    },
+    
+ 
     {
         "state": "MS",
         "statename": "Mississippi"
@@ -15,20 +9,9 @@
         "state": "TN",
         "statename": "Tennessee"
     },
-    {
-        "state": "AR",
-        "statename": "Arkansas"
-    },
-    {
-        "state": "LA",
-        "statename": "Louisiana"
-    },
-    {
-        "state": "OK",
-        "statename": "Oklahoma"
-    },
-    {
-        "state": "TX",
-        "statename": "Texas"
-    }
+	{
+	        "state": "CT",
+	        "statename": "Connecticut"
+	    }
+   
 ]
