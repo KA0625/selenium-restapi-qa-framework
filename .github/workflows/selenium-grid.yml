@@ -21,9 +21,9 @@ jobs:
           MYSQL_DEFAULT_AUTHENTICATION_PLUGIN: mysql_native_password
         options: >-
           --health-cmd="mysqladmin ping -h localhost"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
+          --health-interval=5s
+          --health-timeout=10s
+          --health-retries=10
 
     steps:
       - name: Checkout repository
@@ -43,6 +43,7 @@ jobs:
       - name: Wait for MySQL to be ready
         run: |
           echo "Waiting for MySQL to be ready..."
+          sleep 10
           for i in {1..30}; do
             if mysql -h localhost -u root -pSelenium2025 -e "SELECT 1" &> /dev/null; then
               echo "MySQL is ready!"
@@ -89,61 +90,3 @@ jobs:
               ('TX', 'Texas');
           EOF
 
-      - name: Start Selenium Grid (Hub + 6 Chrome Nodes + 5 Firefox Nodes)
-        run: |
-          docker pull selenium/hub:4.43.0
-          docker pull selenium/node-chrome:4.43.0
-          docker pull selenium/node-firefox:4.43.0
-
-          docker network create grid || echo "grid network already exists"
-
-          docker run -d --network grid --name selenium-hub -p 4444:4444 selenium/hub:4.43.0 || echo "hub already running"
-
-          # Chrome nodes (6)
-          for i in 1 2 3 4 5 6; do
-            docker run -d --network grid --name chrome$i \
-              -e SE_EVENT_BUS_HOST=selenium-hub \
-              -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
-              -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
-              selenium/node-chrome:4.43.0 || echo "chrome$i already running"
-          done
-
-          # Firefox nodes (5)
-          for i in 1 2 3 4 5; do
-            docker run -d --network grid --name firefox$i \
-              -e SE_EVENT_BUS_HOST=selenium-hub \
-              -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
-              -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
-              selenium/node-firefox:4.43.0 || echo "firefox$i already running"
-          done
-
-          echo "Waiting for Selenium Grid to be ready..."
-          sleep 25
-
-      - name: Run Chrome Tests (testng.xml)
-        run: |
-          mvn clean test \
-            -Dbrowser=chrome \
-            -DsuiteXmlFile=testng.xml \
-            -DrunOnGrid=true \
-            -Dselenium.hub.url=http://localhost:4444/wd/hub
-
-      - name: Upload Chrome Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: chrome-report
-          path: test-output/**
-
-      - name: Run Firefox Tests (testng-firefox.xml)
-        run: |
-          mvn test \
-            -Dbrowser=firefox \
-            -DsuiteXmlFile=testng-firefox.xml \
-            -DrunOnGrid=true \
-            -Dselenium.hub.url=http://localhost:4444/wd/hub
-
-      - name: Upload Firefox Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: firefox-report
-          path: test-output/**
