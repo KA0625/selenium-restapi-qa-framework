@@ -26,9 +26,9 @@ jobs:
           docker pull selenium/node-chrome:4.43.0
           docker pull selenium/node-firefox:4.43.0
 
-          docker network create grid
+          docker network create grid || echo "grid network already exists"
 
-          docker run -d --network grid --name selenium-hub -p 4444:4444 selenium/hub:4.43.0
+          docker run -d --network grid --name selenium-hub -p 4444:4444 selenium/hub:4.43.0 || echo "hub already running"
 
           # Chrome nodes (6)
           for i in 1 2 3 4 5 6; do
@@ -36,7 +36,7 @@ jobs:
               -e SE_EVENT_BUS_HOST=selenium-hub \
               -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
               -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
-              selenium/node-chrome:4.43.0
+              selenium/node-chrome:4.43.0 || echo "chrome$i already running"
           done
 
           # Firefox nodes (5)
@@ -45,13 +45,13 @@ jobs:
               -e SE_EVENT_BUS_HOST=selenium-hub \
               -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
               -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
-              selenium/node-firefox:4.43.0
+              selenium/node-firefox:4.43.0 || echo "firefox$i already running"
           done
 
           echo "Waiting for Selenium Grid to be ready..."
-          sleep 20
+          sleep 25
 
-      - name: Run Chrome Tests
+      - name: Run Chrome Tests (testng.xml)
         run: |
           mvn clean test \
             -Dbrowser=chrome \
@@ -65,7 +65,7 @@ jobs:
           name: chrome-report
           path: test-output/**
 
-      - name: Run Firefox Tests
+      - name: Run Firefox Tests (testng-firefox.xml)
         run: |
           mvn test \
             -Dbrowser=firefox \
