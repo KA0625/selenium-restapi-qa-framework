@@ -34,6 +34,41 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Initialize Database (Create USA table)
+        run: |
+          echo "Creating USA table..."
+          mysql -h localhost -u root -pSelenium2025 naco << 'EOF'
+            CREATE TABLE IF NOT EXISTS USA (
+              StateCode VARCHAR(5) PRIMARY KEY,
+              StateName VARCHAR(100)
+            );
+
+            INSERT IGNORE INTO USA (StateCode, StateName) VALUES
+              ('WI', 'Wisconsin'),
+              ('OH', 'Ohio'),
+              ('AL', 'Alabama'),
+              ('WV', 'West Virginia'),
+              ('DE', 'Delaware'),
+              ('FL', 'Florida'),
+              ('NJ', 'New Jersey'),
+              ('VT', 'Vermont'),
+              ('MA', 'Massachusetts'),
+              ('NH', 'New Hampshire'),
+              ('ME', 'Maine'),
+              ('NY', 'New York'),
+              ('PA', 'Pennsylvania'),
+              ('IA', 'Iowa'),
+              ('MS', 'Mississippi'),
+              ('TN', 'Tennessee'),
+              ('AZ', 'Arizona'),
+              ('CA', 'California'),
+              ('NM', 'New Mexico'),
+              ('UT', 'Utah'),
+              ('WY', 'Wyoming'),
+              ('ID', 'Idaho'),
+              ('TX', 'Texas');
+          EOF
+
       - name: Start Selenium Grid (Hub + 6 Chrome Nodes + 5 Firefox Nodes)
         run: |
           docker pull selenium/hub:4.43.0
