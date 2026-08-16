@@ -15,10 +15,14 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.BeforeTest;
+import org.apache.http.impl.client.HttpClientBuilder;
+import io.restassured.config.HttpClientConfig;
+import io.restassured.RestAssured;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import naco.pageobject.Page1WelcomePage;
@@ -100,9 +104,21 @@ public class BaseTest {
         driver.manage().window().maximize();
         return driver;
     }
+    
+    public void disableRestAssuredRetries() {
+        RestAssured.config = RestAssured.config()
+            .httpClient(HttpClientConfig.httpClientConfig()
+                .httpClientFactory(() -> HttpClientBuilder.create()
+                    .disableAutomaticRetries()   
+                    .build()
+                )
+            );
+    }
+
 
     @BeforeTest(alwaysRun = true)
     public void launchapplication() throws IOException {
+    	   disableRestAssuredRetries();
         config = new ConfigReader();
         driver = initializeDriver(config.getBrowser());
 
