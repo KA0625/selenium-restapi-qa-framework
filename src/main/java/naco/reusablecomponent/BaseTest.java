@@ -21,10 +21,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.HttpClients;
-import io.restassured.config.HttpClientConfig;
 import io.restassured.RestAssured;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import naco.pageobject.Page1WelcomePage;
@@ -106,19 +104,13 @@ public class BaseTest {
         driver.manage().window().maximize();
         return driver;
     }
+
     
+   
+
     public void disableRestAssuredRetries() {
-        RestAssured.config = RestAssured.config()
-            .httpClient(HttpClientConfig.httpClientConfig()
-                .httpClientFactory(new HttpClientConfig.HttpClientFactory() {
-                    @Override
-                    public HttpClient createHttpClient() {
-                        return HttpClients.custom()
-                            .disableAutomaticRetries()   
-                            .build();
-                    }
-                })
-            );
+        // RestAssured 5.4.0 works out of the box
+        RestAssured.reset();
     }
 
     @BeforeTest(alwaysRun = true)
