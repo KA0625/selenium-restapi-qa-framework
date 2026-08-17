@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-tests:
-    continue-on-error: true
+    
     runs-on: ubuntu-latest
 
     services:
@@ -123,6 +123,7 @@ jobs:
           sleep 25
 
       - name: Run Chrome Tests (testng.xml)
+        continue-on-error: true
         run: |
           mvn clean test \
             -Dbrowser=chrome \
@@ -137,6 +138,7 @@ jobs:
           path: test-output/**
 
       - name: Run Firefox Tests (testng-firefox.xml)
+        continue-on-error: true
         run: |
           mvn test \
             -Dbrowser=firefox \
