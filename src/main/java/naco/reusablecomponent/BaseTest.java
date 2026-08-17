@@ -19,10 +19,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 
 import org.testng.annotations.BeforeTest;
-import org.apache.http.impl.client.HttpClientBuilder;
+
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClients;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.RestAssured;
-
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import naco.pageobject.Page1WelcomePage;
@@ -108,13 +110,16 @@ public class BaseTest {
     public void disableRestAssuredRetries() {
         RestAssured.config = RestAssured.config()
             .httpClient(HttpClientConfig.httpClientConfig()
-                .httpClientFactory(() -> HttpClientBuilder.create()
-                    .disableAutomaticRetries()   
-                    .build()
-                )
+                .httpClientFactory(new HttpClientConfig.HttpClientFactory() {
+                    @Override
+                    public HttpClient createHttpClient() {
+                        return HttpClients.custom()
+                            .disableAutomaticRetries()   
+                            .build();
+                    }
+                })
             );
     }
-
 
     @BeforeTest(alwaysRun = true)
     public void launchapplication() throws IOException {
