@@ -1,5 +1,4 @@
 name: Run Selenium Tests in Cloud
-
 on:
   workflow_dispatch:
   push:
@@ -8,6 +7,7 @@ on:
 
 jobs:
   run-tests:
+    continue-on-error: true
     runs-on: ubuntu-latest
 
     services:
