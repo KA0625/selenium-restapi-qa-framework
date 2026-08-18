@@ -34,7 +34,7 @@
     </classes>    
 </test> 
  <test name="West_prameterized_2">
-    <parameter name="stateList" value="'AR'"/> 
+    <parameter name="stateList" value="'TX'"/> 
     <classes>
         <class name="naco.testcases.TC_4_Master_Parameterized_CountyWebsiteValidation"/>
     </classes>    
