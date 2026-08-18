@@ -28,7 +28,7 @@ public class TC10_West_DB_CountyValidation extends BaseTest {
 		p2 = p1.GoToCountyExplorer();
 		p2.toggleclick();
 	
-		 String EastNorthQuery = "SELECT StateCode FROM USA WHERE StateCode IN ('MI')";
+		 String EastNorthQuery = "SELECT StateCode FROM USA WHERE StateCode IN ('MI','NC')";
 		    List<String> states = DataBaseReader.getDatafromDB(EastNorthQuery);
 		List<Object[]> allCountyRows = new ArrayList<>();
 		for (String stateCode : states) {
