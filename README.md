@@ -77,8 +77,8 @@ A sophisticated, enterprise-level QA automation framework designed to streamline
 |-----------|------------|
 | **Test Automation** | Selenium WebDriver, TestNG, Cucumber |
 | **Programming Language** | Java (primary) |
-| **API Testing** | REST Assured, HTTP Client |
-| **Build Tool** | Maven/Gradle |
+| **API Testing** | REST Assured, HTTP Client, CDP |
+| **Build Tool** | Maven|
 | **Version Control** | Git/GitHub |
 | **CI/CD Platform** | Jenkins |
 | **Distributed Testing** | Selenium Grid |
@@ -151,72 +151,7 @@ selenium-restapi-qa-framework/
 
 ---
 
-## 📁 Project Structure
-
-### Page Object Models (`src/main/java/pages/`)
-Encapsulates web elements and interactions for maintainability:
-```java
-public class LoginPage {
-    @FindBy(id = "username") WebElement usernameField;
-    @FindBy(id = "password") WebElement passwordField;
-    
-    public void login(String username, String password) {
-        usernameField.sendKeys(username);
-        passwordField.sendKeys(password);
-    }
-}
-```
-
-### API Utilities (`src/main/java/api/`)
-Centralized REST API client for consistent API testing:
-```java
-public class APIClient {
-    public Response getRequest(String endpoint) { }
-    public Response postRequest(String endpoint, String payload) { }
-    public Response validateResponse(Response response, int expectedCode) { }
-}
-```
-
-### Gherkin Features (`src/test/resources/features/`)
-Human-readable BDD scenarios:
-```gherkin
-Feature: User Authentication
-  Scenario: Successful login with valid credentials
-    Given user navigates to login page
-    When user enters valid username and password
-    Then user is redirected to dashboard
-```
-
-### Test Data (`src/test/resources/testdata/`)
-External data sources for parameterized testing:
-- `users.xlsx` - User credentials
-- `testcases.json` - API test cases
-- `apiendpoints.properties` - Endpoint configurations
-
----
-
-## ⚙️ Configuration
-
-### Environment Configuration (`config.properties`)
-```properties
-# Browser Configuration
-browser=chrome
-headless=true
-implicit_wait=10
-
-# Application URLs
-base_url=https://app.example.com
-api_base_url=https://api.example.com
-
-# Database Configuration
-db_host=localhost
-db_port=3306
-db_name=qa_automation
-db_user=root
-db_password=password
-```
-
-### Selenium Grid Setup
+## Selenium Grid Setup
 ```bash
 # Start Selenium Grid Hub
 java -jar selenium-server-standalone.jar -role hub
@@ -256,64 +191,7 @@ mvn test -Dparallel=true -Dthreads=4
 mvn test -DgridURL=http://localhost:4444 -Dbrowser=chrome
 ```
 
----
 
-## 🔄 CI/CD Integration
-
-### Jenkins Pipeline Configuration
-
-**Declarative Pipeline:**
-```groovy
-pipeline {
-    agent any
-    
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/KA0625/selenium-restapi-qa-framework.git'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        
-        stage('Report') {
-            steps {
-                allure includeProperties: false,
-                        jdk: '',
-                        results: [[path: 'allure-results']]
-            }
-        }
-    }
-}
-```
-
-**GitHub Actions Workflow:**
-```yaml
-name: QA Automation Tests
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v2
-      - run: mvn clean test
-      - name: Publish Report
-        uses: simple-elf/allure-report-action@master
-```
-
----
 
 ## 📊 Reporting
 
@@ -408,7 +286,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **KA0625**
 
 - 🔗 GitHub: [@KA0625](https://github.com/KA0625)
-- 📧 Portfolio: [Your Portfolio/Website]
+- LinkedIn: https://www.linkedin.com/in/aathirai-sethuraman/
 
 ---
 
