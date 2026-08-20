@@ -190,7 +190,9 @@ mvn test -Dparallel=true -Dthreads=4
 ```bash
 mvn test -DgridURL=http://localhost:4444 -Dbrowser=chrome
 ```
-
+Video Link of Testng-Parallel-Execution -Extent Report : https://youtu.be/w9bJIOvSb-0
+Video Link of Cucumber -Junit Execution -Allure Report : https://youtu.be/gN-vjj1KcRU
+Video Link of Docker Execution using Selenium grid :    https://youtu.be/1LFiWLF-zBs
 
 
 ## 📊 Reporting
